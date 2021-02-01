@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container no-gutters" style="margin-bottom: 15px">
+		<div class="row justify-content-start align-items-center">
+			<div class="col-md-auto">
+				<h1>Édition de l'auteur</h1>
+			</div>		
+			<div class="col-md-auto">
+				{{ form_start(delete_form) }}
+				<input class="btn btn-danger" type="submit" name="delete" value="Effacer" />
+				{{ form_end(delete_form) }}
+			</div>			
+		</div>
+	</div>
+    {{ form_start(edit_form) }}
+	<div class="container no-gutters" >
+		<div class="row justify-content-start align-items-center">			
+			{{ form_widget(edit_form) }}			
+		</div>
+	</div>	
+	<div class="container no-gutters" style="margin-top: 15px">
+		<div class="row justify-content-start align-items-center">
+			<div class="col-md-auto">
+				<input class="btn btn-success" type="submit" name="edit" value="Sauvegarder" />
+			</div>
+			<div class="col-md-auto">
+				<a class="btn btn-outline-primary" href="{{ path('author_index') }}" role="button">Annuler</a>
+			</div>
+			
+		</div>
+	</div>
+	{{ form_end(edit_form) }}
+	
+{% endblock %}
+{% block javascripts %}
+	<script src="{{ asset('js/forms.js') }}"></script>
+{% endblock %}

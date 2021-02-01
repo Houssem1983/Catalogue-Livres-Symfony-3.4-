@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container no-gutters" style="margin-bottom: 15px">
+		<div class="row justify-content-start align-items-center">
+			<div class="col-md-auto">
+				<marquee><h1>Annuaire des auteurs</h1></marquee>
+			</div>
+			<div class="col-md-auto">
+				<a class="btn btn-primary" href="{{ path('author_new') }}" role="button">Ajouter un auteur</a>
+			</div>
+		</div>
+	</div>	
+	
+    <table class="table table-hover table-success">
+        <tbody>
+        {% for author in authors %}
+            <tr>
+                <td><a href="{{ path('author_edit', { 'id': author.id }) }}">{{ author.getFullName() }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

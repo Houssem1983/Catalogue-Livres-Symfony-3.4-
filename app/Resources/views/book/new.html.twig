@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container no-gutters" style="margin-bottom: 15px">
+		<div class="row justify-content-start align-items-center">
+			<div class="col-md-auto">
+				<h1>Créér un livre</h1>
+			</div>			
+		</div>
+	</div>
+    {{ form_start(form) }}
+	<div class="container no-gutters" >
+		<div class="row justify-content-start align-items-center">		
+			{{ form_widget(form) }}	
+		</div>
+	</div>	
+	<div class="container no-gutters" style="margin-top: 15px">
+		<div class="row justify-content-start align-items-center">
+			<div class="col-md-auto">
+				<input class="btn btn-primary" type="submit" name="create" value="Sauvegarder" />
+			</div>
+			<div class="col-md-auto">
+				<a class="btn btn-outline-primary" href="{{ path('book_index') }}" role="button">Annuler</a>
+			</div>
+		</div>
+	</div>		
+	{{ form_end(form) }}
+
+{% endblock %}
+{% block javascripts %}
+	<script src="{{ asset('js/forms.js') }}"></script>
+{% endblock %}

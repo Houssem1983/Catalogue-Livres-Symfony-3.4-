@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container no-gutters" style="margin-bottom: 15px">
+		<div class="row justify-content-start align-items-center">
+			<div class="col-md-auto">
+				<h1></h1>
+				<h1 class="ml1">
+  <span class="text-wrapper">
+    <span class="line line1"></span>
+    <span class="letters">Modifier un livre</span>
+    <span class="line line2"></span>
+  </span>
+</h1>
+
+
+			</div>		
+			<div class="col-md-auto">
+				{{ form_start(delete_form) }}
+				<input class="btn btn-outline-danger" type="submit" name="delete" value="Effacer" />
+				{{ form_end(delete_form) }}
+			</div>			
+		</div>
+	</div>
+	{{ form_start(edit_form) }}
+	<div class="container no-gutters" >
+		<div class="row justify-content-start align-items-center">			
+			{{ form_widget(edit_form) }}			
+		</div>
+	</div>	
+	<div class="container no-gutters" style="margin-top: 15px">
+		<div class="row justify-content-start align-items-center">
+			<div class="col-md-auto">
+				<input class="btn btn-primary" type="submit" name="edit" value="Sauvegarder" />
+			</div>
+			<div class="col-md-auto">
+				<a class="btn btn-outline-primary" href="{{ path('book_index') }}" role="button">Annuler</a>
+			</div>
+			
+		</div>
+	</div>
+	{{ form_end(edit_form) }}
+	
+		
+{% endblock %}
+{% block javascripts %}
+	<script src="{{ asset('js/forms.js') }}"></script>
+{% endblock %}

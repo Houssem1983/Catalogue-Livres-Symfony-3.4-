@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Catalogue de livres{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <link href="carousel.css" href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <div class="col-md-12">
+    {# <nav class="navbar navbar-default navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img alt="Brand" src="{{ asset('favicon.ico') }}">
+    </a> #}
+ <nav class="navbar navbar-default bd-green">
+ 			<ul class="nav">
+				<li class="nav-item">
+					<a class="nav-link active" href="{{ path('homepage')}}">Accueil</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="{{ path('book_index') }}">Livres</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="{{ path('author_index') }}">Auteurs</a>
+				</li>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+        </form>
+			</ul>
+
+      </nav>
+			<h3 class="text-center">
+				<b>Projet Developemment Web Avancé </b><br>Catalogue de livres
+			</h3>
+
+        <img alt="Brand" src="{{ asset('bibliotheque.jpg') }}" width=100% height=40%>
+
+			  {% block body %}
+        
+        {% endblock %}
+	
+		<script src="{{ asset('js/jquery-3.3.1.js') }}"></script> 
+		<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script>
+            function myFunction() {
+  // Declare variables
+             var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+     
+        {% block javascripts %}{% endblock %}
+
+	
+	<!-- Footer -->
+<footer class="bg-light text-center text-lg-start navbar-fixed-bottom ">
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    
+    <p><b>© 2021 Copyright Developpé Par : </b><br>
+	<a href="mailto:houssemeddin.labidi@esen.tn" rel="nofollow">Houssem Eddin LABIDI </a> & <a href="mailto:jamel.haddouchi@esen.tn" rel="nofollow">Jamel Hadouchi</a></p>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+</div>
+    </body>
+</html>
