@@ -1,7 +1,7 @@
 Catalogue-Livre 
 ============
 
-Un projet symfony3.4 developpé par Houssem eddine LABIDI & Jamel Hadouchi
+Un projet symfony3.4 developpé par Houssem Eddin LABIDI & Jamel Hadouchi
 Dans le cadre de projet de developpement Web Avancé ( Master E-Business Esen A.U "2020-2021" )
  
 1- git clone https://github.com/Houssem1983/Catalogue-Livres-Symfony-3.4-.git
